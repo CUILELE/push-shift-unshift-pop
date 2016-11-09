@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<input type="button" name="" id="" value="上" />
+				<span>1</span>
+				<span>2</span>
+				<span>3</span>
+				<span>4</span>
+			<input type="button" name="" id="" value="下" />
+		</div>
+	</body>
+	<script type="text/javascript">
+		var inp = document.getElementsByTagName('input');
+		var span = document.getElementsByTagName('span');
+		var arr = [];
+		
+		for(var i=0;i<span.length;i++){
+			arr.push(span[i].innerHTML);
+		}
+		inp[0].onclick = function (){
+			arr.unshift(arr.pop())
+			FNN()
+		}
+		inp[1].onclick = function (){
+			arr.push(arr.shift())
+			FNN()
+		}
+		
+		function FNN(){
+			for(var i=0;i<span.length;i++){
+				span[i].innerHTML = arr[i]
+			}
+		}
+		
+
+		
+		/*//每一个内容push到数组里
+		for(var i=0;i<span.length;i++){
+			arr.push(span[i].innerHTML)
+		}
+		
+		inp[0].onclick = function (){
+			arr.unshift(arr.pop());
+			fnn();
+		}
+		
+		inp[1].onclick = function (){
+			arr.push(arr.shift())
+			fnn()
+		}
+		//数组已经变了 ，但内容变了，所以让它内容=数组内容。
+		function fnn(){
+			for(var i = 0; i < span.length; i++){
+				span[i].innerHTML = arr[i];
+			}
+		}*/
+	</script>
+</html>
